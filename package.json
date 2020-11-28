@@ -1,0 +1,19 @@
+{
+  "name": "lights",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Alex Ware <alex.ware@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lifx-lan-client": "^1.0.3",
+    "tplink-lightbulb": "^1.5.3",
+    "tplink-smarthome-api": "^3.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0"
+  },
+  "type": "module",
+  "scripts": {
+    "start":"node index.js"
+  }
+}
