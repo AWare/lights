@@ -28,7 +28,7 @@ const run = async () => {
   ls.lemp.on()
   ls.lomp.on()
   while (n > 0) {
-    if (hasChanged) {
+    if (hasChanged()) {
       process.exit(0)
     }
     const coloura = sunset[~~(Math.random() * sunset.length)]
