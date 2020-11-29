@@ -1,4 +1,4 @@
-import { button, getSwitch, status } from '../tp.js'
+import { button, getSwitch, status } from './tp.js'
 
 const s = await getSwitch()
 const st = status(s)
