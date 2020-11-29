@@ -5,6 +5,7 @@
   "author": "Alex Ware <alex.ware@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bree": "^4.0.0",
     "lifx-lan-client": "^1.0.3",
     "lodash": "^4.17.20",
     "tplink-lightbulb": "^1.5.3",

@@ -7,8 +7,8 @@ const TEMP = 9000
 const TEMP_STABLE = 3500
 const SNOOZE = 1000 * 60 * 5
 
-import { button, getSwitch, status } from './tp.js'
-import { getLights } from './lifx.js'
+import { button, getSwitch, status } from '../tp.js'
+import { getLights } from '../lifx.js'
 
 
 
