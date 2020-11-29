@@ -14,13 +14,14 @@ let temp = 2500
 const run = async () => {
   const s = await getSwitch()
   s.power(true)
+  const ls = await getLights()
+
   const { onChange, hasChanged } = await button(s)
   onChange(async () => {
     ls.lemp.off(2000)
     ls.lomp.off(2000)
 
   })
-  const ls = await getLights()
   console.log(Object.keys(ls))
   let b = 100
   let n = 12
