@@ -1,8 +1,8 @@
 const MIN_H = 359
 const MAX_H = 290
 const FADE_IN_DURATION = 0
-const SUNRISE_DURATION = 10000
-const COLD_DURATION = 10000
+const SUNRISE_DURATION = 30 * 60 * 1000
+const COLD_DURATION = 5 * 60 * 1000
 const TEMP = 9000
 const TEMP_STABLE = 3500
 const SNOOZE = 1000 * 60 * 5
@@ -26,7 +26,7 @@ const run = async () => {
     let {promise} = await button(sw)
     ls.lemp.off(1000)
     ls.lomp.off(1000)
-    await Promise.race([wait(1000*60*5), promise])
+    await Promise.race([wait(SNOOZE), promise])
     run()
   })
   console.log("HI")
