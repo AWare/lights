@@ -1,9 +1,10 @@
 import { getSwitch, button } from '../tp.js'
 import { getLights } from '../lifx.js'
+ import Lifx from "node-lifx-lan";
 
 const sunset = [{ "h": 0.05687203791469195, "s": 0.8902953586497889, "l": 0.5352941176470588 }, { "h": 0.9894636015325671, "s": 0.7631578947368421, "l": 0.44705882352941173 }, { "h": 0.9054373522458629, "s": 0.8245614035087719, "l": 0.33529411764705885 }, { "h": 0.7966101694915254, "s": 0.9365079365079365, "l": 0.24705882352941178 }, { "h": 0.6994535519125683, "s": 0.7530864197530865, "l": 0.1588235294117647 }]
 const cycle = 1000 * 60 * 10
-const fade = 1000 * 60 * 5
+const fade = 1000 * 60 
 
 const wait = (t) => new Promise(resolve => {
   setTimeout(()=>resolve(),t)
@@ -18,9 +19,8 @@ const run = async () => {
 
   const { onChange, hasChanged } = await button(s)
   onChange(async () => {
-    ls.lemp.off(2000)
-    ls.lomp.off(2000)
-
+    await Lifx.turnOffBroadcast({ duration: 4000 })
+    process.exit(0)
   })
   console.log(Object.keys(ls))
   let b = 100
@@ -44,8 +44,7 @@ const run = async () => {
   }
   console.log("OFF")
 
-  ls.lomp.off(4000)
-  ls.lemp.off(4000)
+  Lifx.turnOffBroadcast({duration: 4000})
   console.log("OFF")
 
   await(2000)
