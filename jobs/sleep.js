@@ -48,7 +48,7 @@ const run = async () => {
   }
   console.log("OFF")
 
-  Lifx.turnOffBroadcast({duration: 4000})
+  await Lifx.turnOffBroadcast({duration: 4000})
   console.log("OFF")
 
   await(2000)
