@@ -26,9 +26,6 @@ const run = async () => {
   let n = 12
   Lifx.turnOnBroadcast()
   while (n > 0) {
-    if (hasChanged()) {
-      process.exit(0)
-    }
     const devices = await Lifx.discover()
     devices.map(lamp => {
     const colour = sunset[~~(Math.random() * sunset.length)]
