@@ -3,7 +3,7 @@ const scheduler = new Bree({
   jobs: [
     {
       name: 'sleep',
-      interval: 'at 11:08 pm'
+      interval: 'at 11:11 pm'
     },
     {
       name: 'wake',
