@@ -53,6 +53,9 @@ const run = async () => {
   
   console.log("OFF")
   await (6000)
+  const bulbs = await Lifx.discover()
+  console.log(JSON.stringify(await Promise.allSettled(bulbs.map(light => light.getLightState())),null,2))
+
   process.exit(0)
 }
 
