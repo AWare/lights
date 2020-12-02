@@ -12,12 +12,9 @@ const FINISH_BRIGHTNESS = 1;
 
 import { getSwitch, NOT_CHANGED, TURNED_OFF, onChange } from "../tp.js";
 import Lifx from "node-lifx-lan";
+import { wait } from "../wait.js";
 
-export const wait = (t) =>
-  new Promise((resolve) => {
-    console.log("WAITING ", t);
-    setTimeout(() => resolve(), t);
-  });
+
 
 const ease = (n) => 1 - Math.cos((n * Math.PI) / 2); //easings.net
 
