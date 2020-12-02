@@ -13,7 +13,7 @@ const FINISH_BRIGHTNESS = 1;
 import { getSwitch, NOT_CHANGED, TURNED_OFF, onChange } from "../tp.js";
 import Lifx from "node-lifx-lan";
 
-const wait = (t) =>
+export const wait = (t) =>
   new Promise((resolve) => {
     console.log("WAITING ", t);
     setTimeout(() => resolve(), t);
