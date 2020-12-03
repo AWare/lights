@@ -48,7 +48,6 @@ console.log(colourStep(10, 100));
 const steps = [
   async () => {
     console.log("starting");
-    await Lifx.turnOffBroadcast();
     await Lifx.setColorBroadcast({
       color: {
         hue: MIN_H,
@@ -64,6 +63,11 @@ const steps = [
       duration: 3000,
     });
     await wait(3000);
+    console.log("THEY ON? ")
+    console.log(JSON.stringify(await Promise.allSettled(bulbs.map(light => light.getLightState())), null, 2))
+    await Lifx.turnOnBroadcast({
+      duration: 3000,
+    });
   },
   ...colourSteps(20),
   async () => {
@@ -99,6 +103,7 @@ const run = async () => {
     }
     console.log("running", step);
     await step();
+    console.log(JSON.stringify(await Promise.allSettled(bulbs.map(light => light.getLightState())),null,2))
     console.log("ran");
   }
   return stop === TURNED_OFF ? run() : Promise.resolve();

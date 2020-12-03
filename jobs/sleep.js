@@ -24,9 +24,15 @@ const run = async () => {
   let n = 24
   Lifx.turnOnBroadcast()
   while (n > 0) {
-    const devices = await Lifx.discover()
+    console.log("STARTING")
+    const devices = await Lifx.discover().catch(e => {
+      console.log("COULD NOT GET DEVICES", e)
+      n ++
+      break;
+    })
     devices.map(lamp => {
-    const colour = sunset[~~(Math.random() * sunset.length)]
+      const colour = sunset[~~(Math.random() * sunset.length)]
+      console.log("SETTING LAMP",lamp,colour)
       console.log(lamp.deviceInfo.label,colour)
       lamp.setColor({
         color: {
