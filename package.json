@@ -18,7 +18,7 @@
   },
   "type": "module",
   "scripts": {
-    "start": "node index.js  | tee >(ts \"%d-%m-%y %H_%M_%S\" > logfile)",
+    "start": "node index.js",
     "toggle": "node toggle.js"
   }
 }
