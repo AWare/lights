@@ -11,5 +11,5 @@ const scheduler = new Bree({
     }
   ]
 })
-
+console.log("HERE WE GO")
 scheduler.start()
