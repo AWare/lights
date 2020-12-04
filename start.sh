@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-yarn start | tee >(ts \"%d-%m-%y %H_%M_%S\" > logfile)
+yarn start 2> | tee > (ts > logfile)
